@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: Helvetica, arial;
+}
+.map {
+    background: url('../images/lolla-map.png') center center no-repeat;
+    width: 640px;
+    height: 1200px;
+    position: relative;
+    font-size: 11px;
+}
+.bud-light {
+    position: absolute;
+    top: 75px;
+    left: 350px;
+    width: 200px;
+    height: 200px;
+}
+
+.petrillo {
+    position: absolute;
+    top: 175px;
+    left: 430px;
+    width: 200px;
+    height: 200px;
+}
+
+.grove {
+    position: absolute;
+    top: 335px;
+    left: 150px;
+    width: 200px;
+    height: 200px;
+}
+
+.bmi {
+    position: absolute;
+    top: 395px;
+    left: 430px;
+    width: 200px;
+    height: 200px;
+}
+
+.kidzapalooza {
+    position: absolute;
+    top: 595px;
+    left: 250px;
+    width: 200px;
+    height: 200px;
+}
+
+.perrys {
+    position: absolute;
+    top: 795px;
+    left: 150px;
+    width: 200px;
+    height: 200px;
+}
+
+.lakeshore {
+    position: absolute;
+    top: 850px;
+    left: 450px;
+    width: 200px;
+    height: 200px;
+}
+
+.redbull {
+    position: absolute;
+    top: 975px;
+    left: 350px;
+    width: 200px;
+    height: 200px;
+}
+
+@-webkit-keyframes pulse {
+  from {
+    -webkit-transform: scale(0.95);
+  }
+  50% {
+    -webkit-transform: scale(1.0);
+  }
+  to { 
+    -webkit-transform: scale(0.95);
+  }
+}
+.show {
+    background: #ccc;
+    color: #000;
+    opacity: 0.75;
+}
+.show > span{
+    padding: 0 10px;
+}
+
+div.stage{
+    width:auto;
+}
+div.stage div:nth-child(even)
+{
+
+}
+.show.current {
+    background: #ccc;
+    border: 5px solid #fff;
+    color: #000;
+    opacity: 0.90;
+    -webkit-animation-name: pulse;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-iteration-count: infinite;
+    height: 25px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+.show.current .progress {
+    height: 5px;
+    width: 100%;
+    background-color: green;
+}
+.show.current .progress.bad{
+    background-color: red;
+}
