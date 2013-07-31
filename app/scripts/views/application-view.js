@@ -61,8 +61,6 @@ define([
         checkCurrentTimes: function() {
             var self = this;
             var now = new Date();
-
-            now.setHours(16);
             var min = now.getMinutes();
             var hour = now.getHours();
             var currMinutes = min + hour * 60;
