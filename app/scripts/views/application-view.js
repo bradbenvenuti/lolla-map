@@ -27,7 +27,7 @@ define([
         },
         render: function () {
             var self = this;
-            
+            var currentCount = this.getActiveShowCount();
             this.$el.html(mustache.to_html(template, self.serialize()));
             console.log(self.serialize());
             return this;
@@ -46,7 +46,7 @@ define([
                     return model.attributes.stage === i;
                 });
             }
-
+            var currentShows = this.getActiveShowCount();
             return {
                 stage0 : stages[0].reverse(),
                 stage1 : stages[1].reverse(),
@@ -55,7 +55,8 @@ define([
                 stage4 : stages[4].reverse(),
                 stage5 : stages[5].reverse(),
                 stage6 : stages[6].reverse(),
-                stage7 : stages[7].reverse()
+                stage7 : stages[7].reverse(),
+                currentShows : currentShows
             };
         },
         checkCurrentTimes: function() {
@@ -93,6 +94,13 @@ define([
                     model.set({'passed': true});
                 }
             });
+        },
+        getActiveShowCount: function () {
+            var currentShows = _.filter(this.collection.models, function (model) {
+                return model.attributes.current;
+            });
+
+            return currentShows.length;
         }
     });
 

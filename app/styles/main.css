@@ -2,6 +2,9 @@ body {
     margin: 0;
     font-family: Helvetica, arial;
 }
+.container{
+    width: 640px;
+}
 .map {
     background: url('../images/lolla-map.png') center center no-repeat;
     width: 640px;
@@ -11,8 +14,30 @@ body {
 }
 .map h1{
     font-size: 50px;
-    color: #fff;
+    color: #000;
+    background: #ccc;
     text-align: center;
+    margin: 0 auto;
+    opacity: 0.75;
+    padding-bottom: 20px;
+}
+.map p{
+    font-size: 20px;
+    background: #ccc;
+    color: #000;
+    text-align: center;
+    margin: 0 auto;
+    opacity: 0.75;
+    line-height: 1.4em;
+    padding: 0;
+}
+.map ol {
+    font-size: 14px;
+    opacity: 0.75;
+    background: #ccc;
+    color: #000;
+    margin: 0 auto;
+    line-height: 1.4em;
 }
 .bud-light {
     position: absolute;
@@ -128,4 +153,9 @@ div.stage div:nth-child(even)
 }
 .show.current .progress.bad{
     background-color: red;
+}
+
+div.footer{
+    font-size: 12px;
+    text-align: center;
 }
