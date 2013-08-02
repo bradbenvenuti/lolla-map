@@ -9,6 +9,11 @@ body {
     position: relative;
     font-size: 11px;
 }
+.map h1{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
 .bud-light {
     position: absolute;
     top: 75px;
@@ -20,7 +25,7 @@ body {
 .petrillo {
     position: absolute;
     top: 175px;
-    left: 430px;
+    left: 400px;
     width: 200px;
     height: 200px;
 }
@@ -36,7 +41,7 @@ body {
 .bmi {
     position: absolute;
     top: 395px;
-    left: 430px;
+    left: 400px;
     width: 200px;
     height: 200px;
 }
@@ -60,14 +65,14 @@ body {
 .lakeshore {
     position: absolute;
     top: 850px;
-    left: 450px;
+    left: 400px;
     width: 200px;
     height: 200px;
 }
 
 .redbull {
     position: absolute;
-    top: 975px;
+    top: 1000px;
     left: 350px;
     width: 200px;
     height: 200px;

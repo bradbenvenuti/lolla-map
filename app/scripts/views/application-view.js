@@ -63,22 +63,22 @@ define([
             var now = new Date();
             var min = now.getMinutes();
             var hour = now.getHours();
-            var currMinutes = min + hour * 60;
+            var currMinutes = min + (hour * 60);
+            console.log(hour);
+
+            var nowFullDate = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
 
             _.each(self.collection.models, function(model){
-                var modelMinutesStart = (model.attributes.startHour * 60) + model.attributes.startMin;
-                var modelMinutesEnd = (model.attributes.endHour * 60) + model.attributes.endMin;
-                model.set({'current': false});
-                if (model.attributes.fullDate === '2013-8-2'){
-                    if ( currMinutes >= modelMinutesStart ){
-                        if ( currMinutes <= modelMinutesEnd){
-
-                            var minLeft =  modelMinutesEnd - currMinutes,
-                            totalMinutes = modelMinutesEnd - modelMinutesStart,
-                            percentage = 100 - ((minLeft / totalMinutes) * 100);
+                if ( model.attributes.fullDate === nowFullDate ){
+                    console.log(model.attributes.minutesStart);
+                    if ( currMinutes >= model.attributes.minutesStart ){
+                        if ( currMinutes < model.attributes.minutesEnd ){
+                            
+                            var minLeft =  model.attributes.minutesEnd - currMinutes,
+                            percentage = 100 - ((minLeft / model.attributes.totalMinutes) * 100);
 
                             model.set({'current': true});
-                            model.set({'minLeft': modelMinutesEnd - currMinutes });
+                            model.set({'minLeft': minLeft });
                             model.set({'percentage': percentage});
                             model.set({'progressColor': percentage > 50 ? 'bad' : 'good' });
                             model.set({});
@@ -88,6 +88,8 @@ define([
                             model.set({'passed': true});
                         }
                     }
+                } else {
+                    model.set({'passed': true});
                 }
             });
         }

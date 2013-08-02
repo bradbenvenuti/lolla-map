@@ -35,5 +35,5 @@ require([
         collection: new AppCollection()
     });
 
-    $('body').html(view.render().$el);
+    $('.map').html(view.render().$el);
 });
