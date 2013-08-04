@@ -69,8 +69,9 @@ define([
             var nowFullDate = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
 
             _.each(self.collection.models, function(model){
+                model.set({'passed': false});
+                model.set({'current': false});
                 if ( model.attributes.fullDate === nowFullDate ){
-                    console.log(model.attributes.minutesStart);
                     if ( currMinutes >= model.attributes.minutesStart ){
                         if ( currMinutes < model.attributes.minutesEnd ){
                             
